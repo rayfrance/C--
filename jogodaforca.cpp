@@ -5,12 +5,13 @@ using namespace std;
 const string PALAVRA_SECRETA = "melancia";
 
 bool letra_existe(char chute){
-    for (int i = 0; i < PALAVRA_SECRETA.size(); i++)
+    for (char letra : PALAVRA_SECRETA)
     {
-        if (chute == PALAVRA_SECRETA[i])
+        if (chute == letra)
         {
             return true;
         }
+        
     }
     return false;
     
