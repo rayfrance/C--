@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -16,11 +18,11 @@ int main()
 
     int numero_de_tentativas;
 
-    if (dificuldade == 'F')
+    if (dificuldade == 'f')
     {
         numero_de_tentativas = 15;
     }
-    else if (dificuldade == 'M')
+    else if (dificuldade == 'm')
     {
         numero_de_tentativas = 10;
     }
@@ -29,7 +31,8 @@ int main()
         numero_de_tentativas = 5;
     }
 
-    const int NUMERO_SECRETO = 42;
+    srand(time(NULL));
+    const int NUMERO_SECRETO = rand() % 100;
 
     bool nao_acertou = true;
     int tentativas = 0;
@@ -55,6 +58,7 @@ int main()
         {
             cout << "Parabens! Voce acertou o numero secreto!" << endl;
             nao_acertou = false;
+            break;
         }
         else if (maior)
         {
